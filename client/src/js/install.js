@@ -11,11 +11,11 @@ window.addEventListener('beforeinstallprompt', (event) => {
         event.prompt();        
         
         event.userChoice.then((choice) => {
-            if (choice === 'accepted') {
+            if (choice.outcome === 'accepted') {
                 butInstall.setAttribute('disabled', true);
+                butInstall.classList.add('disabled');
                 butInstall.textContent = 'Installed';
             }
-            else {}
         })
     });
 });
